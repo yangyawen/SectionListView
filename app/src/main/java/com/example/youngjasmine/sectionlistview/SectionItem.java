@@ -32,7 +32,7 @@ public class SectionItem<T> {
         return title;
     }
 
-    public T getItem(int index){
-        return items[index];
+    public T getItem(int position){
+        return items[position];
     }
 }

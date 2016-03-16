@@ -7,11 +7,12 @@ import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class SectionsActivity extends ActionBarActivity {
+public class SectionsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         ListView list = new ListView(this);
 
         SimpleSectionAdapter<String> adapter = new SimpleSectionAdapter<String>(
@@ -23,8 +24,9 @@ public class SectionsActivity extends ActionBarActivity {
                 Toast.makeText(SectionsActivity.this, item, Toast.LENGTH_SHORT).show();
             }
         };
+
         adapter.addSection("Fruits", new String[]{"Apples", "Oranges", "Bananas", "Mangos"});
-        adapter.addSection("Meats", new String[]{"Pork", "Chicken", "Beef", "Lamb"});
+        //adapter.addSection("Meats", new String[]{"Pork", "Chicken", "Beef", "Lamb"});
         list.setAdapter(adapter);
         setContentView(list);
     }
